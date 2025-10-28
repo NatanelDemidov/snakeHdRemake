@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Mirror;
 public class Food : MonoBehaviour
 {
     [SerializeField] GameObject particlePrefab;
@@ -13,7 +14,7 @@ public class Food : MonoBehaviour
         GameObject boom = Instantiate
             (particlePrefab, transform.position, particlePrefab.transform.rotation);
         Destroy(boom, 3f);
-        Destroy(gameObject);
+        NetworkServer.Destroy(gameObject);
         ServerOnFoodEaten?.Invoke();
     }
 }

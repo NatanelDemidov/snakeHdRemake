@@ -10,7 +10,7 @@ public class FoodSpawner : NetworkBehaviour
 
     public override void OnStartServer()
     {
-        SpawnFood();
+        Food.ServerOnFoodEaten += SpawnFood;
     }
     [Server]
     public void SpawnFood()
@@ -21,5 +21,9 @@ public class FoodSpawner : NetworkBehaviour
             Random.Range(-zSize, zSize));
         GameObject apple = Instantiate(foodPrefab, pos, foodPrefab.transform.rotation);
         NetworkServer.Spawn(apple);
+    }
+    public override void OnStopServer()
+    {
+        Food.ServerOnFoodEaten -= SpawnFood;
     }
 }
