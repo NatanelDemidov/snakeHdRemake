@@ -10,6 +10,13 @@ public class PlayerName : NetworkBehaviour
     [SerializeField] TMP_Text playerNameText;
     [SyncVar(hook = nameof(HandlePlayerName))]
     string playerName;
+    public string Name
+    {
+        get
+        {
+            return playerName;
+        }
+    }
     void HandlePlayerName(string oldText, string newText)
     {
         playerNameText.text = newText;

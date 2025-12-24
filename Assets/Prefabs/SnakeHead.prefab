@@ -254,6 +254,9 @@ GameObject:
   - component: {fileID: -1310166738089711945}
   - component: {fileID: 5956442582154750008}
   - component: {fileID: 864399900628655904}
+  - component: {fileID: 8335209369839400025}
+  - component: {fileID: 904859718382426080}
+  - component: {fileID: 5449227584682701314}
   m_Layer: 0
   m_Name: SnakeHead
   m_TagString: Player
@@ -389,10 +392,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d024696697c73148a141efd73997a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  rotationSpeed: 180
+  syncMode: 0
+  syncInterval: 0.1
+  speed: 0.5
+  rotationSpeed: 90
   speedChange: 0.5
-  tailPrefab: {fileID: 6868670569204301540, guid: f0756ea880ffc1043bf943aabbd94281, type: 3}
 --- !u!114 &2996283607481258776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +467,54 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerNameText: {fileID: 4500336421144516438}
+--- !u!114 &8335209369839400025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031708365674451098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4499de90a056840a7ff4ffddc026dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  tailPrefab: {fileID: 6868670569204301540, guid: f0756ea880ffc1043bf943aabbd94281, type: 3}
+--- !u!114 &904859718382426080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031708365674451098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d024696697c73148a141efd73997a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  speed: 3
+  rotationSpeed: 180
+  speedChange: 0.5
+--- !u!114 &5449227584682701314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031708365674451098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e685dd05b71b3bd4f802c363b097116c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  ts: {fileID: 8335209369839400025}
+  pn: {fileID: 864399900628655904}
 --- !u!1 &4031708365858201725
 GameObject:
   m_ObjectHideFlags: 0

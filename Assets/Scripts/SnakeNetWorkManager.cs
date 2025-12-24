@@ -6,7 +6,12 @@ using Mirror;
 public class SnakeNetWorkManager : NetworkManager
 {
     [SerializeField] GameObject foodSpawnerPrefab;
-
+    [SerializeField] GameObject gameOver;
+    GameObject foodSpawner;
+    public override void OnStartServer()
+    {
+        NetworkServer.Spawn(Instantiate(gameOver));
+    }
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
@@ -14,7 +19,11 @@ public class SnakeNetWorkManager : NetworkManager
         {
             return;
         }
-        GameObject foodSpawner = Instantiate(foodSpawnerPrefab);
+        foodSpawner = Instantiate(foodSpawnerPrefab);
         NetworkServer.Spawn(foodSpawner);
+    }
+    public override void OnStopServer()
+    {
+        NetworkServer.Destroy(foodSpawner);
     }
 }
